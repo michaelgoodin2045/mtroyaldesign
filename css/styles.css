@@ -255,8 +255,79 @@ img {
   margin: 0 auto;
 }
 
+.card {
+  position: relative;
+  margin: 1em;
+  background-color: gray;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.card::before {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: scale(0, 1.15);
+  transition: transform ease-in-out 500ms;
+}
+
+.card::after {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  transform: scale(1.15, 0);
+  transition: transform ease-in-out 500ms;
+}
+
+.card:hover::before {
+  transform: scale(1.1, 1);
+}
+
+.card:hover::after {
+  transform: scale(1, 1.1);
+}
+
 .portfolio-item {
   overflow: hidden;
+  transition: opacity ease-out 250ms;
+}
+
+.card:hover img {
+  opacity: 0.4;
+}
+
+.card-text {
+  position: absolute;
+  width: 75%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-title h4 {
+  font-size: 1rem;
+}
+
+.card-body {
+  font-size: 0.75rem;
 }
 
 .contact-page {
@@ -434,7 +505,7 @@ button[type='submit']:focus {
   }
 
   .portfolio-page .nav {
-    width: 45%;
+    width: 50%;
   }
 
   .portfolio-page .nav-link {
