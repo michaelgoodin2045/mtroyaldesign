@@ -2,21 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /*--my-clr-dark: #F5F5F5;
-    --my-clr-light: #000000;
-    --my-clr-base: #FDF3E3;
-    --my-clr-accent: #999081;
-    --my-clr-accent-light: #e6eeef;
-    --my-clr-mid-gray: #f5f5f5;
-    --my-bs: 0.25em 0.25em 0.75em rgba(127, 127, 127, 0.25),
-                0.125em 0.125em 0.25em rgba(127, 127, 127, 0.15); */
-
   --my-clr-light: #f5f5f5;
   --my-clr-dark: #000000;
   --my-clr-base: #fdf3e3;
-  --my-clr-base2: #f1f1ee;
+  --my-clr-base2: #f6f6f3;
   --my-clr-accent4: #c7c7bc;
-  --my-clr-accent: #999081;
+  --my-clr-accent: #d5cec3;
   --my-clr-accent2: #eba733;
   --my-clr-accent3: #2d3852;
   --my-clr-accent-light: #e6eeef;
@@ -40,7 +31,6 @@ img {
   display: block;
   width: 100%;
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -53,6 +43,10 @@ img {
 
 .left-side {
   position: relative;
+}
+
+.left-side img {
+  box-shadow: var(--my-bs);
 }
 
 .nav {
@@ -86,7 +80,7 @@ img {
   justify-content: space-between;
   cursor: pointer;
   padding-right: 1rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .hamburger .bar {
@@ -231,6 +225,11 @@ img {
 
 .portfolio-page .nav {
   color: var(--my-clr-accent);
+}
+
+.portfolio-page .nav-list {
+  flex-direction: row;
+  width: 40%;
 }
 
 .portfolio-page .nav-link {
@@ -497,6 +496,10 @@ button[type='submit']:focus {
     justify-content: space-evenly;
     align-items: flex-start;
     transform: none;
+  }
+
+  .portfolio-page .nav-list {
+    width: 70%;
   }
 
   .nav-link {
